@@ -15,6 +15,8 @@ class CourseCategaryViewset(ModelViewSet):
     serializer_class=CourseCategorySerializer
     pagination_class=DefaultPagination
     
+
+    
 class CourseViewset(ModelViewSet):
     queryset=Course.objects.filter(is_deleted=False).select_related('course_category')
     serializer_class=CourseSerializer
